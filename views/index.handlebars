@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+</head>
+<body>
+  <div class="container-fluid py-4">
+    <div class="container">
+      <div class="jumbotron text-center mb-4" id="app-header">
+        <h1>Name</h1>
+      </div>
+      <div class="overlay">
+        <div class="popup text-center">
+          <p id="firstMessage">blabla</p>
+        </div>
+      </div>
+      <div class="welcome clearfix" id="welcome">
+        <form>
+          <button type="button" class="btn btn-primary mt-3 float-left" id="login">Login</button>
+          <button type="button" class="btn btn-primary mt-3 float-right" id="register">Register</button>
+        </form>
+      </div>
+      <div class="register clearfix"  style="display:none;" id="registerForm">
+        <form>
+          <div class="form-group">
+            <label for="name-input">Username</label>
+            <input type="text" id="userName" class="form-control form-control-sm" placeholder="name" required>
+          </div>
+          <div class="form-group">
+            <label for="name-input">Password</label>
+            <input type="text" id="passWord" class="form-control form-control-sm" placeholder="@#$#^%*" required>
+          </div>
+          <div class="form-group">
+            <label for="phone-input">Email</label>
+            <input type="email" id="email" class="form-control form-control-sm" placeholder="sfdf@sdfsd.com" required>
+          </div>
+          <div class="form-group">
+            <label for="userPN">Phone number</label>
+            <input type="text" id="userPN" class="form-control form-control-sm" placeholder="9177326497" required>
+          </div>
+          <button type="button" class="btn btn-primary mt-3 float-right" id="register_submit">Submit</button>
+          <button type="button" class="btn btn-primary mt-3 float-left" id="goBack_register">Go Back</button>
+        </form>
+      </div>
+      <div class="logIn clearfix" id="logInForm"  style="display:none;" >
+        <form>
+          <div class="form-group">
+            <label for="name-input">Username</label>
+            <input type="text" id="userName" class="form-control form-control-sm" placeholder="name" required>
+          </div>
+          <div class="form-group">
+            <label for="name-input">Password</label>
+            <input type="text" id="passWord" class="form-control form-control-sm" placeholder="@#$#^%*" required>
+          </div>
+          <button type="button" class="btn btn-primary mt-3 float-right" id="login_submit">Submit</button>
+          <button type="button" class="btn btn-primary mt-3 float-left" id="goBack_login">Go Back</button>
+        </form>
+      </div>
+      <div id="dataField" class="clearfix text-center"  style="display:none;">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-info-tab" data-toggle="tab" href="#tasksTableActive" role="tab" aria-controls="nav-table" aria-selected="true">Active</a>
+            <a class="nav-item nav-link" id="nav-table-tab" data-toggle="tab" href="#tasksTableCompleted" role="tab" aria-controls="nav-table" aria-selected="false">Completed</a>
+            <a class="nav-item nav-link" id="nav-table-tab" data-toggle="tab" href="#tasksTablePublic" role="tab" aria-controls="nav-table" aria-selected="false">Public</a>
+            <a class="nav-item nav-link" id="nav-input-tab" data-toggle="tab" href="#newTask" role="tab" aria-controls="nav-table" aria-selected="false">New Task</a>
+            <a class="nav-item nav-link" id="nav-input-tab" data-toggle="tab" href="#complaints" role="tab" aria-controls="nav-table" aria-selected="false">Complaints</a>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="tasksTableActive" role="tabpanel" aria-labelledby="nav-table-tab">
+            <div class="my-3">
+              <div class="card-body"><table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Creator</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Owner</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+                  </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tasksTableCompleted" role="tabpanel" aria-labelledby="nav-table-tab">
+            <div class="card my-3">
+              <div class="card-body"><table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Creator</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Owner</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tasksTablePublic" role="tabpanel" aria-labelledby="nav-table-tab">
+            <div class="card my-3">
+              <div class="card-body">
+                <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Creator</th>
+                      <th scope="col">Task</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Owner</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">4</th>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">5</th>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              </div>
+            </div>
+          <div class="tab-pane fade" id="newTask" role="tabpanel" aria-labelledby="nav-table-tab">
+            <div class="card my-3">
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label for="name-input">UserName</label>
+                    <input type="text" id="taskSmall" class="form-control form-control-sm" placeholder="Task" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="name-input">Details</label>
+                    <input type="text" id="taskDetails" class="form-control form-control-sm" placeholder="-" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="amount-input">Fee</label>
+                    <input type="money" id="taskFee" class="form-control form-control-sm" placeholder="$45.00" required>
+                  </div>
+                  <button type="button" class="btn btn-primary mt-3 float-right" id="task_submit">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div><div class="tab-pane fade" id="complaints" role="tabpanel" aria-labelledby="nav-table-tab">
+            <div class="card my-3">
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label for="name-input">Name</label>
+                    <input type="text" id="complaintName" class="form-control form-control-sm" placeholder="Task" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone-input">Email</label>
+                    <input type="email" id="complaintEmail" class="form-control form-control-sm" placeholder="sfdf@sdfsd.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="name-input">User Name</label>
+                    <input type="text" id="complaintUserName" class="form-control form-control-sm" placeholder="-" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="amount-input">Description</label>
+                    <input type="text" id="complaintDescription" class="form-control form-control-sm" placeholder="$45.00" required>
+                  </div>
+                  <button type="button" class="btn btn-primary mt-3 float-right" id="complaint_submit">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
